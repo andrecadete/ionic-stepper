@@ -101,7 +101,6 @@ export class IonicStepperComponent implements OnInit {
 
   ngOnInit(): void {
     this.render.addClass(this._hostRef.nativeElement, `ionic-stepper-${this.mode}`);
-    console.log('adeu ', this._steps);
   }
 
   nextStep(): void {
