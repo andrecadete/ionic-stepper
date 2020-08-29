@@ -1,4 +1,4 @@
-import { Component, Input, TemplateRef, ViewChild, OnInit, AfterContentInit, AfterViewInit } from '@angular/core';
+import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
 
 export type IonicStepStatus = ('' | 'error');
 
@@ -8,7 +8,7 @@ export type IonicStepStatus = ('' | 'error');
   <ng-template><ng-content></ng-content></ng-template>
   `
 })
-export class IonicStepComponent implements AfterViewInit {
+export class IonicStepComponent {
   index: number;
 
   @Input() disabled: boolean;
@@ -19,9 +19,5 @@ export class IonicStepComponent implements AfterViewInit {
   @Input() status: IonicStepStatus = '';
 
   @ViewChild(TemplateRef) content: TemplateRef<any>;
-  ngAfterViewInit(){
-    console.log('content: ', this.content);
-    console.log('label: ', this.label);
-  }
 
 }
