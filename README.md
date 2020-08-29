@@ -12,22 +12,13 @@ Steppers components for Ionic.
 [![Downloads][downloads-image]][downloads-url]
 [![MIT License][license-image]][license-url]
 
-[中文 README](README-zh_CN.md)
-
 ## Getting Started
 
 ### Prerequisites
 
-- `ionic-angular: ^3.x`
-- `@angular/animations: ^4.x`
+- `ionic-angular: ^5.x`
 
 ### Installing
-
-```base
-$ npm install ionic-stepper
-# or
-$ yarn add ionic-stepper
-```
 
 ### Usage
 
