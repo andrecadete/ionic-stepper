@@ -38,7 +38,7 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
             <div class="ionic-stepper-horizontal-content"
                  [@horizontalStepTransition]="getAnimationDirection(i)">
                  <div class="ionic-vertical-content" *ngIf="i === selectedIndex">
-                     <ng-container [ngTemplateOutlet]="step.content"></ng-container>
+                     <ng-container *ngTemplateOutlet="step.content"></ng-container>
                  </div>
             </div>
         </div>
@@ -60,14 +60,14 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
             <div class="ionic-stepper-vertical-content"
                  [@verticalStepTransition]="getAnimationDirection(i)">
                  <div class="ionic-vertical-content">
-                     <ng-container [ngTemplateOutlet]="step.content"></ng-container>
+                     <ng-container *ngTemplateOutlet="step.content"></ng-container>
                  </div>
             </div>
         </div>
     </ng-container>
 </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
   host: {
     'class': 'ionic-stepper'
   },
@@ -75,13 +75,14 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
     IonicStepperAnimations.verticalStepTransition,
     IonicStepperAnimations.horizontalStepTransition,
   ],
+  styleUrls: ['./ionic-stepper.scss']
 })
 export class IonicStepperComponent implements OnInit {
   disabled: boolean;
   _selectedIndex = 0;
   @ContentChildren(IonicStepComponent) _steps: QueryList<IonicStepComponent>;
 
-  @Input() mode: ('horizontal' | 'vertical') = 'vertical';
+  @Input() mode: ('horizontal' | 'vertical') = 'horizontal';
 
   @Input()
   get selectedIndex(): number {
@@ -100,6 +101,7 @@ export class IonicStepperComponent implements OnInit {
 
   ngOnInit(): void {
     this.render.addClass(this._hostRef.nativeElement, `ionic-stepper-${this.mode}`);
+    console.log('adeu ', this._steps);
   }
 
   nextStep(): void {
