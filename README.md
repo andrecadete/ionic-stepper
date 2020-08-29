@@ -4,7 +4,7 @@
 
 # ionic-stepper
 
-Steppers components for Ionic.
+Steppers components for Ionic 5.
 
 [![Build Status][build-image]][build-image]
 [![Dependency Status][dependency-image]][dependency-url]
