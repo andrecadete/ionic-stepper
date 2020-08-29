@@ -4,7 +4,6 @@ import { IonicStepComponent } from './ionic-step';
 import { IonicStepHeaderComponent } from './ionic-step-header';
 import { IonicStepperNext, IonicStepperPrevious } from './ionic-stepper-button';
 import { IonicModule } from '@ionic/angular';
-import { SharedModule } from 'src/app/shared/shared.module';
 
 const COMPONENTS = [
   IonicStepperComponent,
@@ -16,7 +15,7 @@ const COMPONENTS = [
 
 @NgModule({
   declarations: [...COMPONENTS],
-  imports: [SharedModule],
+  imports: [IonicModule],
   exports: [...COMPONENTS]
 })
 export class IonicStepperModule {
