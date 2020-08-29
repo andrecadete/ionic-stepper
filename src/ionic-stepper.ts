@@ -38,7 +38,7 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
             <div class="ionic-stepper-horizontal-content"
                  [@horizontalStepTransition]="getAnimationDirection(i)">
                  <div class="ionic-vertical-content" *ngIf="i === selectedIndex">
-                     <ng-container *ngTemplateOutlet="step.content"></ng-container>
+                     <ng-container [ngTemplateOutlet]="step.content"></ng-container>
                  </div>
             </div>
         </div>
@@ -60,14 +60,14 @@ export type StepContentPositionState = ('next' | 'previous' | 'current');
             <div class="ionic-stepper-vertical-content"
                  [@verticalStepTransition]="getAnimationDirection(i)">
                  <div class="ionic-vertical-content">
-                     <ng-container *ngTemplateOutlet="step.content"></ng-container>
+                     <ng-container [ngTemplateOutlet]="step.content"></ng-container>
                  </div>
             </div>
         </div>
     </ng-container>
 </div>
   `,
-  changeDetection: ChangeDetectionStrategy.Default,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     'class': 'ionic-stepper'
   },
@@ -132,6 +132,10 @@ export class IonicStepperComponent implements OnInit {
       return 'next';
     }
     return 'current';
+  }
+
+  ngAfterViewChecked() {
+    this._changeDetectorRef.detectChanges();
   }
 
 }
