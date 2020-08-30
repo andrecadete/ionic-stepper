@@ -22,9 +22,7 @@
 ### 安装
 
 ```base
-$ npm install ionic-stepper
-# or
-$ yarn add ionic-stepper
+$ npm install ionic5-stepper
 ```
 
 ### 使用
