@@ -1,4 +1,4 @@
-import { Directive} from '@angular/core';
+import { Directive } from '@angular/core';
 import { IonicStepperComponent } from './ionic-stepper';
 
 /** Button that moves to the next step in a stepper workflow. */
@@ -10,7 +10,7 @@ import { IonicStepperComponent } from './ionic-stepper';
 })
 export class IonicStepperNext {
 
-  constructor(public _stepper: IonicStepperComponent) {}
+  constructor(public _stepper: IonicStepperComponent) { }
 }
 
 /** Button that moves to the previous step in a stepper workflow. */
@@ -22,5 +22,5 @@ export class IonicStepperNext {
 })
 export class IonicStepperPrevious {
 
-  constructor(public _stepper: IonicStepperComponent) {}
+  constructor(public _stepper: IonicStepperComponent) { }
 }

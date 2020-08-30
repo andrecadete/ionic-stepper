@@ -22,16 +22,16 @@ export const IonicStepperAnimations: {
   readonly verticalStepTransition: AnimationTriggerMetadata;
 } = {
   horizontalStepTransition: trigger('horizontalStepTransition', [
-    state('previous', style({transform: 'translate3d(-100%, 0, 0)', visibility: 'hidden'})),
-    state('current', style({transform: 'none', visibility: 'visible'})),
-    state('next', style({transform: 'translate3d(100%, 0, 0)', visibility: 'hidden'})),
+    state('previous', style({ transform: 'translate3d(-100%, 0, 0)', visibility: 'hidden' })),
+    state('current', style({ transform: 'none', visibility: 'visible' })),
+    state('next', style({ transform: 'translate3d(100%, 0, 0)', visibility: 'hidden' })),
     transition('* => *', animate('500ms cubic-bezier(0.35, 0, 0.25, 1)'))
   ]),
 
   verticalStepTransition: trigger('verticalStepTransition', [
-    state('previous', style({height: '0px', visibility: 'hidden'})),
-    state('next', style({height: '0px', visibility: 'hidden'})),
-    state('current', style({height: '*', visibility: 'visible'})),
+    state('previous', style({ height: '0px', visibility: 'hidden' })),
+    state('next', style({ height: '0px', visibility: 'hidden' })),
+    state('current', style({ height: '*', visibility: 'visible' })),
     transition('* <=> current', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
   ])
 };
