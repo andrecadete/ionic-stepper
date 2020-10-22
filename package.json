@@ -13,7 +13,8 @@
     "build:ts": "tsc && ngc",
     "prebuild": "npm run clean && npm run lint",
     "build": "npm run build:ts",
-    "postbuild": "npm run copy-scss"
+    "postbuild": "npm run copy-scss",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
